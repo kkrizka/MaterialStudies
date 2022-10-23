@@ -1,6 +1,11 @@
 # Muon Collider Detector Material Studies
 Scripts for studying the material of the Muon Collider Detector.
 
+All inputs and resulting plots are archived on CERN's EOS storage:
+```
+/eos/user/k/kkrizka/public/MuonCollider/MaterialStudies
+```
+
 ## Installation
 All of the scripts should be run from within the Muon Collider Detector software
 image. It is required for loading of the detector geometry via DD4hep. It also
