@@ -1,0 +1,49 @@
+  inputs:
+    - title: BeampipeShell
+      file: geant4_material_tracks-BeampipeShell.root
+      color: ROOT.kGreen+2
+    - title: BeampipeShell2
+      file: geant4_material_tracks-BeampipeShell2.root
+      color: ROOT.kGreen+3
+    - title: BeampipeShell3
+      file: geant4_material_tracks-BeampipeShell3.root
+      color: ROOT.kGreen+4
+    - title: VertexBarrel
+      file: geant4_material_tracks-VertexBarrel.root
+      color: ROOT.kBlue+1
+    - title: VertexEndcap
+      file: geant4_material_tracks-VertexEndcap.root
+      color: ROOT.kBlue+2
+    - title: VertexVerticalCable
+      file: geant4_material_tracks-VertexVerticalCable.root
+      color: ROOT.kBlue+3
+    - title: InnerTrackerBarrel
+      file: geant4_material_tracks-InnerTrackerBarrel.root
+      color: ROOT.kRed+1
+    - title: InnerTrackerEndcap
+      file: geant4_material_tracks-InnerTrackerEndcap.root
+      color: ROOT.kRed+2
+    - title: InnerTrackerBarrelSupport
+      file: geant4_material_tracks-InnerTrackerBarrelSupport.root
+      color: ROOT.kRed-7
+    - title: InnerTrackerEndcapSupport
+      file: geant4_material_tracks-InnerTrackerEndcapSupport.root
+      color: ROOT.kRed-9
+    - title: InnerTrackerInterlink
+      file: geant4_material_tracks-InnerTrackerInterlink.root
+      color: ROOT.kTeal+2
+    - title: InnerTrackerVertexCable
+      file: geant4_material_tracks-InnerTrackerVertexCable.root
+      color: ROOT.kTeal+3
+    - title: OuterTrackerBarrel
+      file: geant4_material_tracks-OuterTrackerBarrel.root
+      color: ROOT.kMagenta+1
+    - title: OuterTrackerEndcap
+      file: geant4_material_tracks-OuterTrackerEndcap.root
+      color: ROOT.kMagenta+2
+    - title: OuterTrackerBarrelSupport
+      file: geant4_material_tracks-OuterTrackerBarrelSupport.root
+      color: ROOT.kMagenta-4
+    - title: OuterTrackerEndcapSupport
+      file: geant4_material_tracks-OuterTrackerEndcapSupport.root
+      color: ROOT.kMagenta-7
