@@ -13,7 +13,7 @@ from MaterialStudies import config
 if 'ipykernel' in sys.modules: # running in a notebook
     # %load_ext autoreload
     # %autoreload 2
-    runcfgpaths=['runconfigs/data_muonGun.yaml']
+    runcfgpaths=['runconfigs/id.yaml']
 else:
     if len(sys.argv)<2:
         print('usage: {} runconfig.yaml [runconfig.yaml]'.format(sys.argv[0]))
