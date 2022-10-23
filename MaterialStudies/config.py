@@ -1,6 +1,6 @@
 from kkconfig import local
 
-format = 'png'
-datapath = './data/'
+format = 'pdf'
+datapath = '/data/'
 
 local.load_settings('.config.yaml',globals())
