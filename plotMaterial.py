@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 # %%
 import sys
 import argparse
@@ -9,7 +7,7 @@ from math import *
 
 from kkconfig import runconfig
 
-from MaterialStudy import config
+from MaterialStudies import config
 
 # %% Prepare configuration
 if 'ipykernel' in sys.modules: # running in a notebook
