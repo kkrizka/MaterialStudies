@@ -37,11 +37,11 @@ def get_df(subdet):
     return df
 
 # %% Prepare the histograms
-hs_x0=ROOT.THStack('hs_x0','MuColl_v1')
-hs_l0=ROOT.THStack('hs_l0','MuColl_v1')
+hs_x0=ROOT.THStack('hs_x0','')
+hs_l0=ROOT.THStack('hs_l0','')
 
-l_x0=ROOT.TLegend(0.2,0.5,0.85,0.8)
-l_l0=ROOT.TLegend(0.2,0.5,0.85,0.8)
+l_x0=ROOT.TLegend(0.15,0.55,0.85,0.85)
+l_l0=ROOT.TLegend(0.15,0.55,0.85,0.85)
 
 l_x0.SetNColumns(2)
 l_l0.SetNColumns(2)

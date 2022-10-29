@@ -46,7 +46,7 @@ def select_detector(inpath,det):
     # Remove all unwanted detectors
     for detectors in tree.findall('detectors'):
         for detector in detectors.findall('detector'):
-            if detector.attrib['name']!=det:
+            if detector.attrib['name'] not in det:
                 detectors.remove(detector)
 
     for plugins in tree.findall('plugins'):
@@ -57,7 +57,7 @@ def select_detector(inpath,det):
 #
 # Configuration
 parser = argparse.ArgumentParser('Remove a subdetector from a DD4hep definition.')
-parser.add_argument('subdetector',help='Detector name to remove')
+parser.add_argument('subdetector',nargs='+',help='Detector name to keep')
 parser.add_argument('-i','--input',default='/opt/ilcsoft/muonc/detector-simulation/geometries/MuColl_v1',help='Input DD4hep detector definition.')
 parser.add_argument('-o','--output',default='MuColl_v1_output',help='Output DD4hep detector definition.')
 

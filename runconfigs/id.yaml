@@ -1,49 +1,43 @@
   inputs:
-    - title: BeampipeShell
-      file: geant4_material_tracks-BeampipeShell.root
-      color: ROOT.kGreen+2
-    - title: BeampipeShell2
-      file: geant4_material_tracks-BeampipeShell2.root
-      color: ROOT.kGreen+3
-    - title: BeampipeShell3
-      file: geant4_material_tracks-BeampipeShell3.root
-      color: ROOT.kGreen+4
-    - title: VertexBarrel
+    - title: Beampipe
+      file: geant4_material_tracks-Beampipe.root
+      color: ROOT.kOrange+3
+    - title: Vertex Barrel
       file: geant4_material_tracks-VertexBarrel.root
       color: ROOT.kBlue+1
-    - title: VertexEndcap
+    - title: Vertex Endcap
       file: geant4_material_tracks-VertexEndcap.root
       color: ROOT.kBlue+2
-    - title: VertexVerticalCable
+    - title: Vertex Vertical Cable
       file: geant4_material_tracks-VertexVerticalCable.root
       color: ROOT.kBlue+3
-    - title: InnerTrackerBarrel
+    - title: Inner Tracker Barrel
       file: geant4_material_tracks-InnerTrackerBarrel.root
       color: ROOT.kRed+1
-    - title: InnerTrackerEndcap
+    - title: Inner Tracker Endcap
       file: geant4_material_tracks-InnerTrackerEndcap.root
       color: ROOT.kRed+2
-    - title: InnerTrackerBarrelSupport
+    - title: Inner Tracker Barrel (Support)
       file: geant4_material_tracks-InnerTrackerBarrelSupport.root
       color: ROOT.kRed-7
-    - title: InnerTrackerEndcapSupport
+    - title: Inner Tracker Endcap (Support)
       file: geant4_material_tracks-InnerTrackerEndcapSupport.root
       color: ROOT.kRed-9
-    - title: InnerTrackerInterlink
+    - title: Inner Tracker (Interlink)
       file: geant4_material_tracks-InnerTrackerInterlink.root
       color: ROOT.kTeal+2
-    - title: InnerTrackerVertexCable
+    - title: Inner Tracker (Vertex Cable)
       file: geant4_material_tracks-InnerTrackerVertexCable.root
       color: ROOT.kTeal+3
-    - title: OuterTrackerBarrel
+    - title: Outer Tracker Barrel
       file: geant4_material_tracks-OuterTrackerBarrel.root
       color: ROOT.kMagenta+1
-    - title: OuterTrackerEndcap
+    - title: Outer Tracker Endcap
       file: geant4_material_tracks-OuterTrackerEndcap.root
       color: ROOT.kMagenta+2
-    - title: OuterTrackerBarrelSupport
+    - title: Outer Tracker Barrel (Support)
       file: geant4_material_tracks-OuterTrackerBarrelSupport.root
       color: ROOT.kMagenta-4
-    - title: OuterTrackerEndcapSupport
+    - title: Outer Tracker Endcap (Support)
       file: geant4_material_tracks-OuterTrackerEndcapSupport.root
       color: ROOT.kMagenta-7
