@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Indiviual subdetectors
-DETECTORS=(VertexBarrel VertexEndcap VertexVerticalCable InnerTrackerBarrel InnerTrackerEndcap InnerTrackerBarrelSupport InnerTrackerEndcapSupport InnerTrackerInterlink InnerTrackerVertexCable OuterTrackerBarrel OuterTrackerEndcap OuterTrackerBarrelSupport OuterTrackerEndcapSupport)
+DETECTORS=(VertexBarrel VertexEndcap InnerTrackerBarrel InnerTrackerEndcap InnerTrackerBarrelSupport InnerTrackerEndcapSupport OuterTrackerBarrel OuterTrackerEndcap OuterTrackerBarrelSupport OuterTrackerEndcapSupport)
 
 for DET in ${DETECTORS[@]}
 do
@@ -10,3 +10,4 @@ done
 
 # Beampipe
 python keep_detector.py BeampipeShell BeampipeShell2 BeampipeShell3  -o MuColl_v1_Beampipe
+python keep_detector.py InnerTrackerInterlink InnerTrackerVertexCable VertexVerticalCable -o MuColl_v1_Interlinks

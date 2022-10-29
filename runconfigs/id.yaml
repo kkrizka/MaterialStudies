@@ -2,15 +2,15 @@
     - title: Beampipe
       file: geant4_material_tracks-Beampipe.root
       color: ROOT.kOrange+3
+    - title: Interlinks and Other
+      file: geant4_material_tracks-Interlinks.root
+      color: ROOT.kTeal+2
     - title: Vertex Barrel
       file: geant4_material_tracks-VertexBarrel.root
       color: ROOT.kBlue+1
     - title: Vertex Endcap
       file: geant4_material_tracks-VertexEndcap.root
       color: ROOT.kBlue+2
-    - title: Vertex Vertical Cable
-      file: geant4_material_tracks-VertexVerticalCable.root
-      color: ROOT.kBlue+3
     - title: Inner Tracker Barrel
       file: geant4_material_tracks-InnerTrackerBarrel.root
       color: ROOT.kRed+1
@@ -23,12 +23,6 @@
     - title: Inner Tracker Endcap (Support)
       file: geant4_material_tracks-InnerTrackerEndcapSupport.root
       color: ROOT.kRed-9
-    - title: Inner Tracker (Interlink)
-      file: geant4_material_tracks-InnerTrackerInterlink.root
-      color: ROOT.kTeal+2
-    - title: Inner Tracker (Vertex Cable)
-      file: geant4_material_tracks-InnerTrackerVertexCable.root
-      color: ROOT.kTeal+3
     - title: Outer Tracker Barrel
       file: geant4_material_tracks-OuterTrackerBarrel.root
       color: ROOT.kMagenta+1
