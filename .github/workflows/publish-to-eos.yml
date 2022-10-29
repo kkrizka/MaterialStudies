@@ -7,11 +7,11 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Cache Environment
-        id: cache-venv
-        uses: actions/cache@v2
-        with:
-          path: .venv
-          key: venv-${{ hashFiles('setup.py') }}
+      id: cache-venv
+      uses: actions/cache@v2
+      with:
+        path: .venv
+        key: venv-${{ hashFiles('setup.py') }}
     - name: Setup Environment
       if: steps.cache-venv.outputs.cache-hit != 'true'
       run: >-
