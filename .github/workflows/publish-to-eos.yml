@@ -1,0 +1,29 @@
+name: Publish Plots to EOS
+on: push
+jobs:
+  plot-n-publish:
+    name: Plot and copy output to EOS
+    runs-on: infnpd/mucoll-ilc-framework:1.6-centos8stream
+    steps:
+    - uses: actions/checkout@master
+    - name: Cache Environment
+        id: cache-venv
+        uses: actions/cache@v2
+        with:
+          path: .venv
+          key: venv-${{ hashFiles('setup.py') }}
+    - name: Setup Environment
+      if: steps.cache-venv.outputs.cache-hit != 'true'
+      run: >-
+        source /opt/ilcsoft/muonc/init_ilcsoft.sh
+        python -m venv .venv --system-site-packages
+        source .venv/bin/activate
+        pip install .
+    - name: Plot
+      run: >-
+        echo "datapath: ${{ secrets.EOS_PATH }}/${GITHUB_REF}" >> .config.yaml
+        plotMaterial.py runconfigs/id.yaml
+    - name: Copy
+      run: >-
+        echo ${GITHUB_REF}
+        xrdcp x0.pdf ${{ secrets.EOS_PATH }}/${GITHUB_REF}
