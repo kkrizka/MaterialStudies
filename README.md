@@ -22,14 +22,17 @@ Then inside the container.
 source /opt/setup_mucoll.sh
 python -m venv .venv --system-site-packages
 source .venv/bin/activate
-cmake -Sacts -Bbuild -DACTS_BUILD_EXAMPLES_PYTHON_BINDINGS=ON -DACTS_BUILD_EXAMPLES_GEANT4=ON -DACTS_BUILD_EXAMPLES_DD4HEP=ON 
+cmake -Sacts -Bbuild -DACTS_BUILD_EXAMPLES_PYTHON_BINDINGS=ON -DACTS_BUILD_EXAMPLES_GEANT4=ON -DACTS_BUILD_EXAMPLES_DD4HEP=ON
 cmake --build build
 pip install .
+source build/python/setup.sh
 ```
 
 Then in any subsequent session, run the following inside your container.
 ```shell
+source /opt/setup_mucoll.sh
 source .venv/bin/activate
+source build/python/setup.sh
 ```
 
 ## Generating Inputs
@@ -45,12 +48,11 @@ keep_detector.py VertexBarrel -o MuColl_v1_VertexBarrel
 ```
 
 ### Running Geantino Scan
-The ACTS `ActsExampleMaterialRecordingDD4hep` program is used to load the DD4hep
-geometry and run the geantino scan. Note that this program only works with a
+A modified version of the ACTS `material_recording.py` example script is used to load the DD4hep geometry and run the geantino scan. Note that this program only works with a
 single thread.
 
 ```shell
-./build/bin/ActsExampleMaterialRecordingDD4hep --dd4hep-input MuColl_v1_VertexBarrel/MuColl_v1.xml  -n 100000 -j1 --output-root 1
+./material_recording.py --input MuColl_v1_VertexBarrel/MuColl_v1.xml --output ./geant4_material_tracks-VertexBarrel.root
 ```
 
 ## Making Plots

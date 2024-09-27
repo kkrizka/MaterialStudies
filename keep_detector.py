@@ -63,15 +63,15 @@ MUCOLL_GEO=os.environ.get('MUCOLL_GEO','/opt/ilcsoft/muonc/detector-simulation/g
 parser = argparse.ArgumentParser('Remove a subdetector from a DD4hep definition.')
 parser.add_argument('subdetector',nargs='+',help='Detector name to keep')
 parser.add_argument('-i','--input',default=MUCOLL_GEO,help='Input DD4hep detector definition.')
-parser.add_argument('-o','--output',default='MuColl_v1_output',help='Output DD4hep detector definition.')
+parser.add_argument('-o','--outdir',default='MuColl_v1_output',help='Output DD4hep detector definition.')
 
 args = parser.parse_args()
 
 #
 # Setup input/output
 inpath=pathlib.Path(args.input)
-outpath=pathlib.Path(args.output)
-outdir=outpath.parent
+outdir=pathlib.Path(args.outdir)
+outpath=outdir / inpath.name
 
 if outdir.is_dir():
     shutil.rmtree(outdir)
