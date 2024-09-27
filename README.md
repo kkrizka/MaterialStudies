@@ -39,6 +39,13 @@ source build/python/setup.sh
 The `make_dd4hep.sh` and `run_geantino.sh` implement the following two
 subsections over the parts of the tracking detector.
 
+An example of using the scripts is:
+
+```shell
+./make_dd4hep.sh -i lcgeo/MuColl/MuSIC_v1/MuSIC_v1.xml
+./run_geantino.sh -d ./MuSIC_v1 -n MuSIC_v1
+```
+
 ### Selecting Subdetectors in DD4hep
 A specific subdetector is selected by making a copy of the DD4hep geometry
 description and removing all subdetectors that do not match a specific name.

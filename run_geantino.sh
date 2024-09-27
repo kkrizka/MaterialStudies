@@ -1,21 +1,28 @@
 #!/bin/bash
 
 DATADIR=/data/geant4
+NAME=MuColl_v1
 
-OPTSTRING="d:"
+OPTSTRING="d:n:"
 while getopts "${OPTSTRING}" opt; do
     case ${opt} in
 	d)
 	    DATADIR=${OPTARG}
 	    ;;
+	n)
+	    NAME=${OPTARG}
+	    ;;
     esac
 done
 
 echo "DATADIR = ${DATADIR}"
+if [ ! -e ${DATADIR} ]; then
+    mkdir ${DATADIR}
+fi
 
-DETECTORS=(VertexBarrel VertexEndcap VertexVerticalCable InnerTrackerBarrel InnerTrackerEndcap InnerTrackerBarrelSupport InnerTrackerEndcapSupport Interlinks Beampipe OuterTrackerBarrel OuterTrackerEndcap OuterTrackerBarrelSupport OuterTrackerEndcapSupport)
+DETECTORS=(VertexBarrel VertexEndcap InnerTrackerBarrel InnerTrackerEndcap InnerTrackerBarrelSupport InnerTrackerEndcapSupport OuterTrackerBarrel OuterTrackerEndcap OuterTrackerBarrelSupport OuterTrackerEndcapSupport Interlinks Beampipe)
 
 for DET in ${DETECTORS[@]}
 do
-    ./material_recording.py --input MuColl_v1_${DET}/MuColl_v1.xml --output ./geant4_material_tracks-${DET}.root
+    ./material_recording.py --input ${NAME}_${DET}/${NAME}.xml --output ${DATADIR}/geant4_material_tracks-${DET}.root --events 10000
 done
