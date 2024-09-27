@@ -29,6 +29,17 @@ do
     python keep_detector.py ${DET} -i ${GEO} -o ${GEONAME}_${DET}
 done
 
-# Beampipe
-python keep_detector.py BeampipeShell BeampipeShell2 BeampipeShell3 -i ${GEO} -o ${GEONAME}_Beampipe
-python keep_detector.py InnerTrackerInterlink InnerTrackerVertexCable VertexVerticalCable -i ${GEO} -o ${GEONAME}_Interlinks
+# Subdetectors
+Interlink="InnerTrackerVertexCable VertexVerticalCable"
+Beampipe="BeampipeInner BeampipeOuter BeampipeShell BeampipeShell2 BeampipeShell3"
+Nozzle="NozzleW_right NozzleW_left NozzleBCH_right NozzleBCH_left"
+Tracker="Vertex VertexBarrel VertexEndcap VertexVerticalCable InnerTrackers InnerTrackerBarrel InnerTrackerEndcap InnerTrackerBarrelSupport InnerTrackerEndcapSupport InnerTrackerInterlink InnerTrackerVertexCable OuterTrackers OuterTrackerBarrel OuterTrackerEndcap OuterTrackerBarrelSupport OuterTrackerEndcapSupport"
+ECal="ECalBarrel ECalEndcap"
+HCal="HCalBarrel HCalEndcaps HCalEndcap HCalRing"
+Solenoid="Solenoid SolenoidBarrel SolenoidEndcaps"
+Yoke="YokeBarrel YokeEndcap"
+
+SUBDETECTORS=(Interlink Beampipe Nozzle Tracker ECal HCal Solenoid Yoke)
+for SUBDETECTOR in ${SUBDETECTORS[@]}; do
+    python keep_detector.py ${!SUBDETECTOR} -i ${GEO} -o ${GEONAME}_${SUBDETECTOR}
+done

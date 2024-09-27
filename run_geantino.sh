@@ -20,9 +20,9 @@ if [ ! -e ${DATADIR} ]; then
     mkdir ${DATADIR}
 fi
 
-DETECTORS=(VertexBarrel VertexEndcap InnerTrackerBarrel InnerTrackerEndcap InnerTrackerBarrelSupport InnerTrackerEndcapSupport OuterTrackerBarrel OuterTrackerEndcap OuterTrackerBarrelSupport OuterTrackerEndcapSupport Interlinks Beampipe)
+DETECTORS=(VertexBarrel VertexEndcap InnerTrackerBarrel InnerTrackerEndcap InnerTrackerBarrelSupport InnerTrackerEndcapSupport OuterTrackerBarrel OuterTrackerEndcap OuterTrackerBarrelSupport OuterTrackerEndcapSupport Interlinks Beampipe InnerTrackerInterlink Beampipe Nozzle Tracker ECal HCal Solenoid Yoke)
 
 for DET in ${DETECTORS[@]}
 do
-    ./material_recording.py --input ${NAME}_${DET}/${NAME}.xml --output ${DATADIR}/geant4_material_tracks-${DET}.root --events 10000
+    ./material_recording.py --input ${NAME}_${DET}/${NAME}.xml --output ${DATADIR}/geant4_material_tracks-${DET}.root --events 1000
 done
