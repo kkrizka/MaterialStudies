@@ -55,10 +55,14 @@ def select_detector(inpath,det):
     tree.write(inpath, encoding="utf-8")
 
 #
+# Check if default detector can be found
+MUCOLL_GEO=os.environ.get('MUCOLL_GEO','/opt/ilcsoft/muonc/detector-simulation/geometries/MuColl_v1/MuColl_v1.xml')
+
+#
 # Configuration
 parser = argparse.ArgumentParser('Remove a subdetector from a DD4hep definition.')
 parser.add_argument('subdetector',nargs='+',help='Detector name to keep')
-parser.add_argument('-i','--input',default='/opt/ilcsoft/muonc/detector-simulation/geometries/MuColl_v1',help='Input DD4hep detector definition.')
+parser.add_argument('-i','--input',default=MUCOLL_GEO,help='Input DD4hep detector definition.')
 parser.add_argument('-o','--output',default='MuColl_v1_output',help='Output DD4hep detector definition.')
 
 args = parser.parse_args()
@@ -67,10 +71,11 @@ args = parser.parse_args()
 # Setup input/output
 inpath=pathlib.Path(args.input)
 outpath=pathlib.Path(args.output)
+outdir=outpath.parent
 
-if outpath.is_dir():
-    shutil.rmtree(outpath)
-shutil.copytree(inpath, outpath)
+if outdir.is_dir():
+    shutil.rmtree(outdir)
+shutil.copytree(inpath.parent, outdir)
 
 # parse
-select_detector(outpath/'MuColl_v1.xml', args.subdetector)
+select_detector(outpath, args.subdetector)

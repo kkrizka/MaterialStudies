@@ -14,12 +14,12 @@ provides many of the other requirements (ROOT, DD4hep, GEANT4).
 Start the container using Apptainer. The `/data` volume is used by the scripts
 to store large output (ie: output of the Geantino scan).
 ```shell
-apptainer shell -B/my/big/disk:/data /cvmfs/unpacked.cern.ch/registry.hub.docker.com/infnpd/mucoll-ilc-framework\:1.6-centos8stream/
+apptainer shell -B/my/big/disk:/data /cvmfs/unpacked.cern.ch/gitlab-registry.cern.ch/muon-collider/mucoll-deploy/mucoll:2.9-alma9
 ```
 
 Then inside the container.
 ```shell
-source /opt/ilcsoft/muonc/init_ilcsoft.sh
+source /opt/setup_mucoll.sh
 python -m venv .venv --system-site-packages
 source .venv/bin/activate
 cmake -Sacts -Bbuild -DACTS_BUILD_EXAMPLES_PYTHON_BINDINGS=ON -DACTS_BUILD_EXAMPLES_GEANT4=ON -DACTS_BUILD_EXAMPLES_DD4HEP=ON 
