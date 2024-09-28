@@ -36,6 +36,11 @@ def get_df(subdet):
 
     return df
 
+# %% Get some styles ready
+mystyle=runcfg.get('style',{})
+style_x0=mystyle.get('x0',{})
+style_l0=mystyle.get('l0',{})
+
 # %% Prepare the histograms
 hs_x0=ROOT.THStack('hs_x0','')
 hs_l0=ROOT.THStack('hs_l0','')
@@ -89,7 +94,7 @@ hs_x0.Draw()
 hs_x0.GetXaxis().SetTitle('#theta [#circ]')
 hs_x0.GetYaxis().SetTitle('Radiation Length [X_{0}]')
 
-hs_x0.SetMaximum(0.5)
+hs_x0.SetMaximum(style_x0.get('ymax',0.5))
 
 l_x0.Draw()
 
@@ -105,7 +110,7 @@ hs_l0.Draw()
 hs_l0.GetXaxis().SetTitle('#theta [#circ]')
 hs_l0.GetYaxis().SetTitle('Hadronic Interaction Length [L_{0}]')
 
-hs_l0.SetMaximum(0.25)
+hs_l0.SetMaximum(style_l0.get('ymax',0.25))
 
 l_l0.Draw()
 

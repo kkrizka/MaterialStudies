@@ -20,7 +20,7 @@ if [ ! -e ${DATADIR} ]; then
     mkdir ${DATADIR}
 fi
 
-DETECTORS=(VertexBarrel VertexEndcap InnerTrackerBarrel InnerTrackerEndcap InnerTrackerBarrelSupport InnerTrackerEndcapSupport OuterTrackerBarrel OuterTrackerEndcap OuterTrackerBarrelSupport OuterTrackerEndcapSupport Interlinks Beampipe InnerTrackerInterlink Beampipe Nozzle Tracker ECal HCal Solenoid Yoke)
+DETECTORS=(VertexBarrel VertexEndcap InnerTrackerBarrel InnerTrackerEndcap InnerTrackerBarrelSupport InnerTrackerEndcapSupport OuterTrackerBarrel OuterTrackerEndcap OuterTrackerBarrelSupport OuterTrackerEndcapSupport Interlinks Beampipe Interlinks Beampipe Nozzle Tracker ECal HCal Solenoid Yoke)
 
 for DET in ${DETECTORS[@]}
 do
