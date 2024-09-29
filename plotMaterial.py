@@ -36,6 +36,10 @@ def get_df(subdet):
 
     return df
 
+# %% Settings that need defaults
+name=runcfg.get('name','')
+title=runcfg.get('title','')
+
 # %% Get some styles ready
 mystyle=runcfg.get('style',{})
 style_x0=mystyle.get('x0',{})
@@ -98,9 +102,9 @@ hs_x0.SetMaximum(style_x0.get('ymax',0.5))
 
 l_x0.Draw()
 
-logo_x0=style.logo(xpos=0.4,ypos=0.4)
+logo_x0=style.logo(title,xpos=0.4,ypos=0.4)
 
-c_x0.SaveAs(f'x0.{config.format}')
+c_x0.SaveAs(f'{name}_x0.{config.format}')
 
 # %% Draw X0 histogram
 c_l0=ROOT.TCanvas('c_l0','')
@@ -114,12 +118,12 @@ hs_l0.SetMaximum(style_l0.get('ymax',0.25))
 
 l_l0.Draw()
 
-logo_l0=style.logo(xpos=0.4,ypos=0.4)
+logo_l0=style.logo(title,xpos=0.4,ypos=0.4)
 
-c_l0.SaveAs(f'l0.{config.format}')
+c_l0.SaveAs(f'{name}_l0.{config.format}')
 
 # %% Save all output to a ROOT file
-fh=ROOT.TFile.Open('x0l0.root','RECREATE')
+fh=ROOT.TFile.Open(f'{name}_x0l0.root','RECREATE')
 
 hs_x0.Write()
 hs_l0.Write()

@@ -1,0 +1,59 @@
+groups:
+  VertexBarrel:
+  VertexEndcap:
+  InnerTrackerBarrel:
+  InnerTrackerEndcap:
+  InnerTrackerBarrelSupport:
+  InnerTrackerEndcapSupport:
+  OuterTrackerBarrel:
+  OuterTrackerEndcap:
+  OuterTrackerBarrelSupport:
+  OuterTrackerEndcapSupport:
+  Interlinks:
+    - InnerTrackerVertexCable
+    - VertexVerticalCable
+  Beampipe:
+    - BeampipeInner
+    - BeampipeOuter
+    - BeampipeShell
+    - BeampipeShell2
+    - BeampipeShell3
+  Nozzle:
+    - NozzleW_right
+    - NozzleW_left
+    - NozzleBCH_right
+    - NozzleBCH_left
+  Tracker:
+    - Vertex
+    - VertexBarrel
+    - VertexEndcap
+    - VertexVerticalCable
+    - InnerTrackers
+    - InnerTrackerBarrel
+    - InnerTrackerEndcap
+    - InnerTrackerBarrelSupport
+    - InnerTrackerEndcapSupport
+    - InnerTrackerInterlink
+    - InnerTrackerVertexCable
+    - OuterTrackers
+    - OuterTrackerBarrel
+    - OuterTrackerEndcap
+    - OuterTrackerBarrelSupport
+    - OuterTrackerEndcapSupport
+  ECal:
+    - ECalBarrel
+    - ECalEndcap
+  HCal:
+    - HCalBarrel
+    - HCalEndcaps
+    - HCalEndcap
+    - HCalRing
+  Solenoid:
+    - Solenoid
+    - SolenoidBarrel
+    - SolenoidEndcaps
+  Yoke:
+    - YokeBarrel
+    - YokeEndcap
+
+    

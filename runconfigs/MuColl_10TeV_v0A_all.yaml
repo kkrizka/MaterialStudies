@@ -1,0 +1,29 @@
+title: MuColl_10TeV_v0A
+name: MuColl_10TeV_v0A_all
+style:
+  x0:
+    ymax: 1000
+  l0:
+    ymax: 100
+inputs:
+  - title: Beampipe
+    file: geant4_material_tracks-MuColl_10TeV_v0A_Beampipe.root
+    color: ROOT.kOrange+3
+  - title: Nozzle
+    file: geant4_material_tracks-MuColl_10TeV_v0A_Nozzle.root
+    color: ROOT.kTeal+2
+  - title: Tracker
+    file: geant4_material_tracks-MuColl_10TeV_v0A_Tracker.root
+    color: ROOT.kBlue+1
+  - title: ECal
+    file: geant4_material_tracks-MuColl_10TeV_v0A_ECal.root
+    color: ROOT.kBlue+2
+  - title: HCal
+    file: geant4_material_tracks-MuColl_10TeV_v0A_HCal.root
+    color: ROOT.kRed+1
+  - title: Solenoid
+    file: geant4_material_tracks-MuColl_10TeV_v0A_Solenoid.root
+    color: ROOT.kRed+2
+  - title: Yoke
+    file: geant4_material_tracks-MuColl_10TeV_v0A_Yoke.root
+    color: ROOT.kRed-7

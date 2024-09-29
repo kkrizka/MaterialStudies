@@ -1,0 +1,39 @@
+title: MuSIC_v1
+name: MuSIC_v1_id
+inputs:
+  - title: Beampipe
+    file: geant4_material_tracks-MuSIC_v1_Beampipe.root
+    color: ROOT.kOrange+3
+  - title: Interlinks and Other
+    file: geant4_material_tracks-MuSIC_v1_Interlinks.root
+    color: ROOT.kTeal+2
+  - title: Vertex Barrel
+    file: geant4_material_tracks-MuSIC_v1_VertexBarrel.root
+    color: ROOT.kBlue+1
+  - title: Vertex Endcap
+    file: geant4_material_tracks-MuSIC_v1_VertexEndcap.root
+    color: ROOT.kBlue+2
+  - title: Inner Tracker Barrel
+    file: geant4_material_tracks-MuSIC_v1_InnerTrackerBarrel.root
+    color: ROOT.kRed+1
+  - title: Inner Tracker Endcap
+    file: geant4_material_tracks-MuSIC_v1_InnerTrackerEndcap.root
+    color: ROOT.kRed+2
+  - title: Inner Tracker Barrel (Support)
+    file: geant4_material_tracks-MuSIC_v1_InnerTrackerBarrelSupport.root
+    color: ROOT.kRed-7
+  - title: Inner Tracker Endcap (Support)
+    file: geant4_material_tracks-MuSIC_v1_InnerTrackerEndcapSupport.root
+    color: ROOT.kRed-9
+  - title: Outer Tracker Barrel
+    file: geant4_material_tracks-MuSIC_v1_OuterTrackerBarrel.root
+    color: ROOT.kMagenta+1
+  - title: Outer Tracker Endcap
+    file: geant4_material_tracks-MuSIC_v1_OuterTrackerEndcap.root
+    color: ROOT.kMagenta+2
+  - title: Outer Tracker Barrel (Support)
+    file: geant4_material_tracks-MuSIC_v1_OuterTrackerBarrelSupport.root
+    color: ROOT.kMagenta-4
+  - title: Outer Tracker Endcap (Support)
+    file: geant4_material_tracks-MuSIC_v1_OuterTrackerEndcapSupport.root
+    color: ROOT.kMagenta-7

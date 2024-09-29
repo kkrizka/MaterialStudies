@@ -36,23 +36,23 @@ source build/python/setup.sh
 ```
 
 ## Generating Inputs
-The `make_dd4hep.sh` and `run_geantino.sh` implement the following two
-subsections over the parts of the tracking detector.
+There are two steps to generate the inputs for a plotting script.
 
-An example of using the scripts is:
-
-```shell
-./make_dd4hep.sh -i lcgeo/MuColl/MuSIC_v1/MuSIC_v1.xml
-./run_geantino.sh -d ./MuSIC_v1 -n MuSIC_v1
-```
+1. Create a copy of the DD4hep XML files containing only the requested detectors.
+2. Run the geantino scan over the modified DD4hep description.
 
 ### Selecting Subdetectors in DD4hep
 A specific subdetector is selected by making a copy of the DD4hep geometry
 description and removing all subdetectors that do not match a specific name.
 
 ```shell
-keep_detector.py VertexBarrel -o MuColl_v1_VertexBarrel
+keep_detectosr.py runconfig.yaml -i ${MUCOLL_GEO}
 ```
+
+The runconfig contains a dictionary called `groups`. The keys are the names of the
+detector groups that are suffixed to the ouptut directory. The values are lists of
+detectors that should be kept for that group. If the value is null, then the detector
+with the same name as the group is kept.
 
 ### Running Geantino Scan
 A modified version of the ACTS `material_recording.py` example script is used to load the DD4hep geometry and run the geantino scan. Note that this program only works with a
@@ -60,6 +60,13 @@ single thread.
 
 ```shell
 ./material_recording.py --input MuColl_v1_VertexBarrel/MuColl_v1.xml --output ./geant4_material_tracks-VertexBarrel.root
+```
+
+The `run_geantino.sh` script can be used to run over all DD4hep descriptions in a
+directory.
+
+```shell
+./run_geantino.sh
 ```
 
 ## Making Plots

@@ -3,7 +3,7 @@ on: push
 jobs:
   plot-n-publish:
     name: Plot and copy output to EOS
-    runs-on: infnpd/mucoll-ilc-framework:1.6-centos8stream
+    runs-on: gitlab-registry.cern.ch/muon-collider/mucoll-deploy/mucoll:2.9-alma9
     steps:
     - uses: actions/checkout@master
     - name: Cache Environment
@@ -15,7 +15,7 @@ jobs:
     - name: Setup Environment
       if: steps.cache-venv.outputs.cache-hit != 'true'
       run: >-
-        source /opt/ilcsoft/muonc/init_ilcsoft.sh
+        source /opt/setup_mucoll.sh
         python -m venv .venv --system-site-packages
         source .venv/bin/activate
         pip install .
